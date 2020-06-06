@@ -5,9 +5,9 @@
 
 
 Etapes de l'exo:
-- créer les fichiers 
-- Render le formulaire dans le fichier react
-- créer des "states" qui contiennent les valeurs associés à *name* et *message*
+- `<s>créer les fichiers</s>`
+- <s>Render le formulaire dans le fichier react</s>
+- <s>créer des "states" qui contiennent les valeurs associés à *name* et *message*</s>
 - créer des fonctions qui récupèrent les valeurs entrées dans les inputs 
 - créer une fonction qui permet de converser ces valeurs lorsque le bouton est appuyé
 - faire en sorte que ces valeurs soient stockés dans un tableau (sûrement créer le tableau dès le départ mais faire les autres étapes avant pour avoir le déroulé)
