@@ -7,14 +7,9 @@ class App extends React.Component {
 
     }
 
-    handleNameInput = e => {
+    handleInput = e => {
         this.setState({
             name: e.target.value,
-        });
-    }
-
-    handleMessageInput = e => {
-        this.setState({
             message: e.target.value,
         });
     }
@@ -31,8 +26,8 @@ class App extends React.Component {
         return(
         <form action="" onSubmit={this.handleSubmit}>
             <p>Say Something</p>
-            <input type="text" placeholder= "Your Name" onChange={this.handleNameInput}/> <br/>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Comment" onChange={this.handleMessageInput}></textarea> <br/>
+            <input type="text" placeholder= "Your Name" onChange={this.handleInput}/> <br/>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Comment" onChange={this.handleInput}></textarea> <br/>
             <button>Comment -></button>
         </form>
         )
