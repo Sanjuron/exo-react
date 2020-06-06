@@ -3,23 +3,27 @@ class App extends React.Component {
     state = {
 
         name: "Julien",
+        message: "lallala",
 
     }
 
-    handleInput = e => {
+    handleNameInput = e => {
         this.setState({
-            pseudo: e.target.value
+            name: e.target.value,
         });
-        console.log(e.target.value);
+    }
 
-
+    handleMessageInput = e => {
+        this.setState({
+            message: e.target.value,
+        });
     }
 
 
     handleSubmit = e => {
         e.preventDefault();
-        console.log(e.target.value);
-        console.log(e);
+        console.log(this.state.name);
+        console.log(this.state.message);
     }
 
 
@@ -27,8 +31,8 @@ class App extends React.Component {
         return(
         <form action="" onSubmit={this.handleSubmit}>
             <p>Say Something</p>
-            <input type="text" placeholder= "Your Name" value={this.pseudo} onChange={this.handleInput}/> <br/>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Comment"></textarea> <br/>
+            <input type="text" placeholder= "Your Name" onChange={this.handleNameInput}/> <br/>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Comment" onChange={this.handleMessageInput}></textarea> <br/>
             <button>Comment -></button>
         </form>
         )
