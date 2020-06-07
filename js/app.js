@@ -2,37 +2,53 @@ class App extends React.Component {
 
     state = {
 
-        name: "Julien",
-        message: "lallala",
+        comments : [
+            {name: "julien", message: "olololo",}
+        ]
+
 
     }
 
-    handleNameInput = e => {
+    // handleNameInput = e => {
+    //     this.setState({
+    //         name: e.target.value,
+    //     });
+    // }
+
+    // handleMessageInput = e => {
+    //     this.setState({
+    //         message: e.target.value,
+    //     });
+    // }
+
+    addComment = (comment) => {
+        let comments = [...this.state.comments, comment];
         this.setState({
-            name: e.target.value,
-        });
-    }
-
-    handleMessageInput = e => {
-        this.setState({
-            message: e.target.value,
-        });
-    }
+          comments: comments
+        })
+      }
 
 
     handleSubmit = e => {
         e.preventDefault();
-        console.log(this.state.name);
-        console.log(this.state.message);
+        // this.addComment(this.state.comments);
+        this.addComment();
+        console.log(this.state.comments);
     }
 
+    handleInput = e => {
+        this.setState({
+            [e.target.id]: e.target.value
+            
+        })
+    }
 
     render() {
         return(
         <form action="" onSubmit={this.handleSubmit}>
             <p>Say Something</p>
-            <input type="text" placeholder= "Your Name" onChange={this.handleNameInput}/> <br/>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Comment" onChange={this.handleMessageInput}></textarea> <br/>
+            <input type="text" placeholder= "Your Name" id="name" onChange={this.handleInput}/> <br/>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Comment" id="message" onChange={this.handleInput}></textarea> <br/>
             <button>Comment -></button>
         </form>
         )
